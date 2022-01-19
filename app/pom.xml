@@ -9,8 +9,8 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>br.com.lucascunha</groupId>
-	<artifactId>app</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<artifactId>orcamento-familiar</artifactId>
+	<version>1.0.0</version>
 	<name>app</name>
 	<description>A simple Spring Boot application with MySQL running inside Docker containers.</description>
 	<properties>

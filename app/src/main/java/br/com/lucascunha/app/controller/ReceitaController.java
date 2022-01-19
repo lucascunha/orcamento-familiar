@@ -30,9 +30,16 @@ public class ReceitaController {
         return receitaRepository.findAll();
     }
 
+    @GetMapping("/{id}")
+    public ResponseEntity<Receita> buscar(@PathVariable Long id) {
+        return receitaRepository.findById(id)
+                .map(receita -> ResponseEntity.ok(receita))
+                .orElse(ResponseEntity.notFound().build());
+    }
+
     @PostMapping
     @ResponseStatus(code = HttpStatus.CREATED)
-    public Receita salvar(@RequestBody @Valid Receita receita) {
+    public Receita salvar(@RequestBody Receita receita) {
         return receitaRepository.save(receita);
     }
 }

@@ -31,11 +31,9 @@ public class Receita {
     private String descricao;
 
     @Column(name = "valor")
-    @NotBlank(message = "O valor é obrigatório")
-    @Size(max = 10)
     private Double valor;
 
-    @Column(name = "data_receita")
+    @Column(name = "data_vencimento")
     @NotBlank(message = "A data é obrigatória")
     private String data;
 
