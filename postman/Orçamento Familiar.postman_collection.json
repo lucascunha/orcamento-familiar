@@ -1,0 +1,120 @@
+{
+	"info": {
+		"_postman_id": "3c5be2d6-b29b-4163-8d65-f435dc583423",
+		"name": "Orçamento Familiar",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Modulos - Listar",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/receitas",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"receitas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Modulos - Buscar",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/receitas/2",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"receitas",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Modulos - Salvar",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n{\r\n    \"descricao\": \"Renda Extra\",\r\n    \"valor\": 1200.00,\r\n    \"data\": \"15/01/2022\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/receitas",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"receitas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Modulos - Atualizar",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"descricao\": \"Salário\",\r\n    \"valor\": 9000.00,\r\n    \"data\": \"28/01/2022\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/receitas/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"receitas",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Modulos - Excluir",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/modulos/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"modulos",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
