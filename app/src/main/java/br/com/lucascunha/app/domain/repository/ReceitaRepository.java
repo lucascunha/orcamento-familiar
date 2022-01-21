@@ -12,4 +12,6 @@ import br.com.lucascunha.app.domain.model.Receita;
 public interface ReceitaRepository extends JpaRepository<Receita, Long> {
 	List<Receita> findAll();
 	Optional<Receita> findById(Long id);
+	Receita findReceitaByDescricaoAndData(String descricao, String data);
+	Optional<Receita> findByDescricao(String descricao);
 }

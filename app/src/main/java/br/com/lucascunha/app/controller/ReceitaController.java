@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import br.com.lucascunha.app.domain.model.Receita;
 import br.com.lucascunha.app.domain.repository.ReceitaRepository;
+import br.com.lucascunha.app.domain.service.ReceitaService;
 import lombok.AllArgsConstructor;
 
 @AllArgsConstructor
@@ -26,6 +27,7 @@ import lombok.AllArgsConstructor;
 public class ReceitaController {
 
     private ReceitaRepository receitaRepository;
+    private ReceitaService receitaService;
     
     @GetMapping
     public List<Receita> listar(){
@@ -41,8 +43,9 @@ public class ReceitaController {
 
     @PostMapping
     @ResponseStatus(code = HttpStatus.CREATED)
-    public Receita salvar(@RequestBody Receita receita) {
-        return receitaRepository.save(receita);
+    public Receita salvar(@RequestBody @Valid Receita receita) {
+        //return receitaRepository.save(receita);
+        return receitaService.salvar(receita);
     }
 
     @PutMapping("/{id}")
