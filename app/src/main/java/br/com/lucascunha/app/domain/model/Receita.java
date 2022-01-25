@@ -9,6 +9,8 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
@@ -27,7 +29,7 @@ public class Receita {
 
     @Column(name = "descricao")
     @NotBlank(message = "A descrição é obrigatória")
-    @Size(max = 255, message = "A descrição deve ter entre {min} e {max} caracteres")
+    @Size(max = 100, message = "A descrição deve ter no máximo {max} caracteres")
     private String descricao;
 
     @Column(name = "valor")
@@ -35,6 +37,7 @@ public class Receita {
 
     @Column(name = "data_vencimento")
     @NotBlank(message = "A data é obrigatória")
+    @DateTimeFormat(pattern = "dd/MM/yyyy")
     private String data;
 
     public Object map(Object object) {
