@@ -41,6 +41,11 @@ public class ReceitaController {
                 .orElse(ResponseEntity.notFound().build());
     }
 
+    @GetMapping("/descricao/{descricao}")
+    public List<Receita> buscarPorDescricao(@PathVariable String descricao) {
+        return receitaRepository.findByDescricao(descricao);
+    }
+
     @PostMapping
     @ResponseStatus(code = HttpStatus.CREATED)
     public Receita salvar(@RequestBody @Valid Receita receita) {
