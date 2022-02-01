@@ -58,6 +58,7 @@ public class DespesaController {
         despesa.setId(id);
         despesa.getDescricao();
         despesa.getValor();
+        despesa.getCategoria();
         return ResponseEntity.ok(despesaService.salvar(despesa));
     }
 
