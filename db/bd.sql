@@ -23,6 +23,17 @@ create table despesa (
     primary key (id)
 );
 
+-- to add a new column to table despesa
+alter table despesa add column categoria varchar(12);
+
+-- to create a new table for category
+create table categoria (
+    id bigint not null auto_increment,
+    descricao varchar(12) not null,
+    
+    primary key (id)
+);
+
 -- to show all tables
 show tables;
 

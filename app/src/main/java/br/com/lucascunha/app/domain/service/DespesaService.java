@@ -22,6 +22,10 @@ public class DespesaService {
             throw new NegocioException("Já existe uma despesa com esta descrição e data.");
         }
         
+        if(despesa.getCategoria() == null) {
+            despesa.setCategoria("Outros");
+        }
+
         return despesaRepository.save(despesa);
     }   
 

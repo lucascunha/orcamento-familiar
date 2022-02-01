@@ -41,6 +41,11 @@ public class DespesaController {
                 .orElse(ResponseEntity.notFound().build());
     }
 
+    @GetMapping(value = "/descricao/{descricao}")
+    public List<Despesa> buscarPorDescricao(@PathVariable String descricao) {
+        return despesaRepository.findByDescricao(descricao);
+    }
+
     @PostMapping
     @ResponseStatus(code = HttpStatus.CREATED)
     public Despesa salvar(@RequestBody @Valid Despesa despesa) {
@@ -58,6 +63,7 @@ public class DespesaController {
         despesa.setId(id);
         despesa.getDescricao();
         despesa.getValor();
+        despesa.getCategoria();
         return ResponseEntity.ok(despesaService.salvar(despesa));
     }
 
