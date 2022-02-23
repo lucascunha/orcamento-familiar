@@ -2,14 +2,14 @@
 CREATE DATABASE orcamento-db;
 
 -- to use database
-use nodedb;
+use orcamento-db;
 
 -- creating a new table receita
 create table receita (
 	id bigint not null auto_increment,
     descricao varchar(100) not null,
     valor decimal(10,2) not null,
-    data_vencimento varchar(10) not null,
+    data_vencimento date not null,
     
     primary key (id)
 );
@@ -18,13 +18,11 @@ create table despesa (
     id bigint not null auto_increment,
     descricao varchar(100) not null,
     valor decimal(10,2) not null,
-    data_vencimento varchar(10) not null,
+    data_vencimento date not null,
+    categoria varchar(12) not null,
     
     primary key (id)
 );
-
--- to add a new column to table despesa
-alter table despesa add column categoria varchar(12);
 
 -- to create a new table for category
 create table categoria (
@@ -41,3 +39,5 @@ show tables;
 desc receita;
 
 desc despesa;
+
+desc categoria;
